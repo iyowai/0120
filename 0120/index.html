@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+	<style>
+		.wrapper{
+			height: : 200px;
+		}
+		.header{
+			position: fixed;
+			width: 100%;
+		}
+		.navbar{
+             background-color: #000;
+             height:  64px;
+             transition: all 0.3s; 
+		}
+		.navbar .active{
+             background-color: #fff; 
+		}
+		.link{
+			color: #fff;
+			margin-left: 800px;
+		}
+		.navbar.active .link{
+			color: #000;
+		}
+	</style>
+
+</head>
+
+<body>
+<div class="wrapper">
+	<header class="header">
+		<div class="navbar">
+			<ul>
+				<li><a class="link" href="">0000</a></li>
+                <li><a class="link" href="">0000</a></li>
+                <li><a class="link" href="">0000</a></li>
+                <li><a class="link" href="">0000</a></li>
+			</ul>
+		</div>
+	</header>
+</div>	
+</body>
+
+<!-- js -->
+<script src="jquery/jquery-3.2.1.min.js"></script>
+<script>
+	$(window).scroll(function(){
+		var screenheight = $(this).height();
+		var scrolledpx = $(this).scrolltop();
+		if(scrolledpx >= screenheight / 2) {
+			$('.navbar').addClass('active');
+		}else{
+			$('navbar').removeClass('active');
+		}
+	})
+</script>
+
+</html>
